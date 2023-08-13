@@ -1,6 +1,6 @@
 import { Inter } from 'next/font/google'
 import Main from '@/src/components/main/Main'
-import { useCallback, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,32 +11,30 @@ const inter = Inter({ subsets: ['latin'] })
 // }
 export default function Home() {
 
-  const foo=1;
+  const [count, setCount] = useState(1);
 
-  const handleClick = useCallback((e) => {
-    e.preventDefault();
-    alert(foo);
-  }, [])
+  const handleClick = (e) => {
+    setCount((count) => count + 1);
+    setCount((count) => count + 1);
+  };
 
   
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
-    console.log("mounted");
     return () => {
       document.body.style.backgroundColor = "";
-      console.log("unmounted");
     };
   }, []);
 
   return (
     <>
-      <a 
-        href="/about"
+      <h1>{count}</h1>
+      <button 
         onClick={(e) => handleClick(e)}
         // onClick={(e) => {handleClick(e), foo}}
       >
         ボタン
-      </a>
+      </button>
       <Main page="index" />
     </>
   )
