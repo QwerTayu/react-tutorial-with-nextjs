@@ -3,13 +3,15 @@ import styles from '@/styles/Home.module.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function HeadLine({ link }) {
+export function HeadLine(props) {
   return (
     <>
       <p>
         Get started by editing&nbsp;
-        <code className={styles.code}>{ link }</code>
+        { props.code }
       </p>
+      
+      <button onClick={props.onClick}></button>
     </>
   )
 }
