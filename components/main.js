@@ -4,6 +4,7 @@ import styles from '@/components/Main.module.css'
 import { Header } from '@/components/header'
 import { Links } from '@/components/links'
 import { HeadLine } from '@/components/headLine'
+import { Menu } from './menu'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,6 +21,8 @@ export default function Main(props) {
             <code className={styles.code}>pages/{props.page}.js</code>
           </HeadLine>
         </div>
+
+        <Menu />
 
         <div className={styles.center}>
           <Image
