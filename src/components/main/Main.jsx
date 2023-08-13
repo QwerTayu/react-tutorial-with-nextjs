@@ -1,17 +1,15 @@
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/components/Main.module.css'
-import { Header } from '@/components/header'
-import { Links } from '@/components/links'
-import { HeadLine } from '@/components/headLine'
-import { Menu } from './menu'
+import styles from '@/src/components/main/Main.module.css'
+import { Menu } from '@/src/components/menu/Menu'
+import { Links } from '@/src/components/links/Links'
+import { HeadLine } from '@/src/components/HeadLine'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Main(props) {
   return (
     <>
-      <Header />
       <main className={`${styles.main} ${inter.className}`}>
         <div className={styles.description}>
           <HeadLine
