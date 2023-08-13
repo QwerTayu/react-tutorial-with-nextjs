@@ -1,15 +1,9 @@
 import { Inter } from 'next/font/google'
 import Main from '@/src/components/main/Main'
-import { useCounter } from '@/src/hooks/useCounter';
-import { useInputArray } from '@/src/hooks/useInputArray';
-import { useBgLightBlue } from '@/src/hooks/useBgLightBlue';
-
 const inter = Inter({ subsets: ['latin'] });
 
-export default function Home() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const {text, inputAlert, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
+export default function Home(props) {
+  const { count, isShow, handleClick, handleDisplay, text, inputAlert, array, handleChange, handleAdd } = props;
 
   return (
     <>

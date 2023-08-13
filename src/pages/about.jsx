@@ -6,10 +6,7 @@ import { useBgLightBlue } from '@/src/hooks/useBgLightBlue';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function About() {
-  const { count, isShow, handleClick, handleDisplay } = useCounter();
-  const {text, inputAlert, array, handleChange, handleAdd } = useInputArray();
-  useBgLightBlue();
+export default function About({ count, isShow, handleClick, handleDisplay, text, inputAlert, array, handleChange, handleAdd }) {
 
   return (
     <>
