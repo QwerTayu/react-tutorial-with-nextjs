@@ -7,7 +7,7 @@ export function HeadLine(props) {
     <>
       <p>
         Get started by editing&nbsp;
-        { props.code }
+        { props.children }
       </p>
       
       <button onClick={props.onClick}></button>
