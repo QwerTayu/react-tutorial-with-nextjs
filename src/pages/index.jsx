@@ -9,16 +9,15 @@ export default function Home() {
   const [text, setText] = useState("");
   const [inputAlert, setInputAlert] = useState("");
   const [isShow, setIsShow] = useState(true);
-  const [array, setArray] = useState([]);
 
   const handleClick = useCallback(() => {
     if (count < 10) {
-      setCount((prevCount) => prevCount + 1);
+      setCount((count) => count + 1);
     }
   }, [count]);
   
   const handleDisplay = useCallback(() => {
-    setIsShow((prevIsShow) => !prevIsShow);
+    setIsShow((isShow) => !isShow);
   }, []);
 
   const handleChange = useCallback((e) => {
@@ -29,16 +28,6 @@ export default function Home() {
     setInputAlert("");
     setText(e.target.value.trim());
   }, []);
-
-  const handleAdd = useCallback(() => {
-    setArray((prevArray) => {
-      if (prevArray.some(item => item === text)) {
-        alert("exiting same items");
-        return prevArray;
-      }
-      return [...prevArray, text];
-    });
-  }, [text]);
 
   useEffect(() => {
     document.body.style.backgroundColor = "lightblue";
@@ -66,14 +55,6 @@ export default function Home() {
         onChange={handleChange}
       />
       <p>{inputAlert}</p>
-      <button onClick={handleAdd}>追加</button>
-      <ul>
-        {array.map(item => {
-          return (
-            <li key={item}>{item}</li>
-          )
-        })}
-      </ul>
       <Main page="index" />
     </>
   )
